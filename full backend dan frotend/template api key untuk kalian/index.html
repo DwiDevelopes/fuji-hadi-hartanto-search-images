@@ -1,0 +1,245 @@
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<!-- Salvattore -->
+	<link rel="stylesheet" href="css/salvattore.css">
+	<!-- Theme Style -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<link rel="stylesheet" href="css/button.css">
+	</head>
+	<body>
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Fuji Hadi Hartanto - Search Images</title>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+			<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+			<meta name="author" content="Dwibaktindev" />
+			<link rel="shortcut icon" href="icon/icon.png">
+			<meta property="og:title" content=""/>
+			<meta property="og:image" content=""/>
+			<meta property="og:url" content=""/>
+			<meta property="og:site_name" content=""/>
+			<meta property="og:description" content=""/>
+			<meta name="twitter:title" content="" />
+			<meta name="twitter:image" content="" />
+			<meta name="twitter:url" content="" />
+			<meta name="twitter:card" content="" />
+			<link rel="shortcut icon" href="favicon.ico">
+			<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+			<link rel="stylesheet" href="css/apikey.css">
+		</head>
+
+
+		<div id="fh5co-offcanvass">
+			<a href="#" class="fh5co-offcanvass-close js-fh5co-offcanvass-close">Menu <i class="icon-cross"></i> </a>
+			<h1 class="fh5co-logo"><a class="navbar-brand" href="index.html">UI - Dwi Bakti N</a></h1>
+			<ul>
+				<li class="active"><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="pricing.html">Pricing</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+			<h3 class="fh5co-lead">Connect with us</h3>
+			<p class="fh5co-social-icons">
+				<a href="#"><i class="icon-twitter"></i></a>
+				<a href="#"><i class="icon-facebook"></i></a>
+				<a href="#"><i class="icon-instagram"></i></a>
+				<a href="#"><i class="icon-dribbble"></i></a>
+				<a href="#"><i class="icon-youtube"></i></a>
+			</p>
+		</div>
+		<header id="fh5co-header" role="banner">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<a href="#" class="fh5co-menu-btn js-fh5co-menu-btn">Menu <i class="icon-menu"></i></a>
+						<a class="navbar-brand" href="index.html">Fuji Hadi Hartanto</a>		
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- END .header -->
+
+
+
+		<body>
+			<div id="fh5co-main">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="search-box">
+								<input type="text" id="search-input" placeholder="Search professional UI photos...">
+								<button id="search-btn"><i class="fas fa-search"></i> Search</button>
+							</div>
+						</div>
+					</div>
+		
+					<div class="row">
+						<div class="col-12">
+							<div class="gallery-container" id="fh5co-board">
+								<!-- Images will be loaded here dynamically -->
+							</div>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-12 text-center">
+							<button id="load-more" class="btn btn-primary">
+								<i class="fas fa-plus"></i> Load More
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<footer id="fh5co-footer" class="bg-light py-4 mt-4">
+				<div class="container">
+					<div class="row row-padded">
+						<div class="col-md-12 text-center">
+							<p class="fh5co-social-icons">
+								<a href="#"><i class="fab fa-twitter"></i></a>
+								<a href="#"><i class="fab fa-facebook"></i></a>
+								<a href="#"><i class="fab fa-instagram"></i></a>
+								<a href="#"><i class="fab fa-dribbble"></i></a>
+								<a href="#"><i class="fab fa-youtube"></i></a>
+							</p>
+							<p class="mb-0"><small>&copy; Professional UI Gallery. All Rights Reserved.</small></p>
+						</div>
+					</div>
+				</div>
+			</footer>
+		
+<!-- Image Details Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body pt-0">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Main Image Column -->
+                        <div class="col-lg-8 pe-lg-4">
+                            <div class="image-container position-relative rounded-3 overflow-hidden shadow-lg mb-4">
+                                <img id="modal-image" src="" class="img-fluid w-100" alt="" style="max-height: 70vh; object-fit: contain;">
+                                <div class="image-overlay d-flex align-items-center justify-content-center">
+                                    <a id="download-link" href="#" class="btn btn-primary btn-lg download-btn">
+                                        <i class="fas fa-download me-2"></i> Download
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Details Column -->
+                        <div class="col-lg-4 ps-lg-4">
+                            <div class="details-card p-4 rounded-3 shadow-sm">
+                                <!-- Basic Info -->
+                                <div class="mb-4">
+                                    <h4 class="fw-bold mb-3">UI Design Details</h4>
+                                    <p id="image-description" class="text-muted">No description available.</p>
+                                </div>
+                                
+                                <!-- Photographer Info -->
+                                <div class="photographer-info mb-4 p-3 bg-light rounded-3">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fas fa-user-circle me-2 fs-4 text-primary"></i>
+                                        <h5 class="mb-0 fw-bold">Photographer</h5>
+                                    </div>
+                                    <p id="image-photographer" class="mb-0"></p>
+                                </div>
+                                
+                                <!-- Camera Details -->
+                                <div class="camera-details mb-4">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="fas fa-camera me-2 fs-4 text-primary"></i>
+                                        <h5 class="mb-0 fw-bold">Technical Details</h5>
+                                    </div>
+                                    
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light rounded-3 h-100">
+                                                <small class="text-muted d-block">Camera Make</small>
+                                                <span class="fw-bold" id="camera-make">-</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="p-3 bg-light rounded-3 h-100">
+                                                <small class="text-muted d-block">Camera Model</small>
+                                                <span class="fw-bold" id="camera-model">-</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light rounded-3 h-100">
+                                                <small class="text-muted d-block">Aperture</small>
+                                                <span class="fw-bold" id="camera-aperture">-</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light rounded-3 h-100">
+                                                <small class="text-muted d-block">Focal Length</small>
+                                                <span class="fw-bold" id="camera-focal">-</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="p-3 bg-light rounded-3 h-100">
+                                                <small class="text-muted d-block">ISO</small>
+                                                <span class="fw-bold" id="camera-iso">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Tags -->
+                                <div class="tags-section">
+                                    <h6 class="fw-bold mb-2">Design Elements</h6>
+                                    <div class="tags-container">
+                                        <span class="badge bg-primary me-1 mb-1">UI</span>
+                                        <span class="badge bg-primary me-1 mb-1">Modern</span>
+                                        <span class="badge bg-primary me-1 mb-1">Clean</span>
+                                        <span class="badge bg-primary me-1 mb-1">Professional</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src = "js/apikey.js"></script>
+		</body>
+		</html>
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Magnific Popup -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<!-- Salvattore -->
+	<script src="js/salvattore.min.js"></script>
+	<!-- Main JS -->
+	<script src="js/main.js"></script>
+	
+	</body>
+</html>

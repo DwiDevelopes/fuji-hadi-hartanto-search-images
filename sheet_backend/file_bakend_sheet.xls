@@ -1,0 +1,56 @@
+function doPost(e) {
+  try {
+    // Get the active spreadsheet and sheet
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    
+    // Parse the form data
+    const data = JSON.parse(e.postData.contents);
+    
+    // Get current date and time
+    const timestamp = new Date();
+    
+    // Prepare the row data
+    const rowData = [
+      timestamp,
+      data.firstName || '',  // Assuming your form has firstName input
+      data.lastName || '',   // Assuming your form has lastName input
+      data.email || '',      // Email input
+      data.message || ''    // Message textarea
+    ];
+    
+    // Append the data to the sheet
+    sheet.appendRow(rowData);
+    
+    // Return success response
+    return ContentService.createTextOutput(
+      JSON.stringify({result: 'success', message: 'Data saved successfully'})
+    ).setMimeType(ContentService.MimeType.JSON);
+    
+  } catch (error) {
+    // Return error response
+    return ContentService.createTextOutput(
+      JSON.stringify({result: 'error', message: error.toString()})
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+function doGet(e) {
+  return ContentService.createTextOutput(
+    JSON.stringify({result: 'error', message: 'GET requests are not supported'})
+  ).setMimeType(ContentService.MimeType.JSON);
+}
+
+// Test function
+function testDoPost() {
+  const e = {
+    postData: {
+      contents: JSON.stringify({
+        firstName: "Test",
+        lastName: "User",
+        email: "test@example.com",
+        message: "This is a test message"
+      })
+    }
+  };
+  doPost(e);
+}
